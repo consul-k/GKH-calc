@@ -45,7 +45,7 @@ def calc():
         out_cold_water = newcold - oldcold
         data[' Расход холодной воды'] = out_cold_water
         # расход электроэнергии
-        out_electro = oldelectro - newelectro
+        out_electro = newelectro - oldelectro
         data[' Расход электроэнергии'] = out_electro
         # расход водоотвода
         drinage = out_hot_water + out_cold_water
@@ -60,7 +60,7 @@ def calc():
         #данные о долгах
         data_debt = {' Сумма долга за горячую воду':0,
                      ' Сумма долга за холодную воду':0,
-                     ' Сумма долга за воотвод':0,
+                     ' Сумма долга за водоотвод':0,
                      ' Сумма долга за электроэнергию':0,
                      ' Итого задолженность':0}
 
@@ -75,7 +75,7 @@ def calc():
         data_debt[' Сумма долга за электроэнергию'] = debt_electro
         #сумма долга за водоотвод 
         debt_drinage = round(drinage * 39.97)
-        data_debt[' Сумма долга за воотвод'] = debt_drinage
+        data_debt[' Сумма долга за водоотвод'] = debt_drinage
         #итоговая сумма долга
         debt_all = debt_hot + debt_cold + debt_electro + debt_drinage
         data_debt[' Итого задолженность'] = debt_all
